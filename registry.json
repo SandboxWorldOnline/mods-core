@@ -101,7 +101,11 @@
         "post-processing",
         "lighting"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "artifact": {
+        "file": "lights-and-shadows.swmod",
+        "sha256": "d2564fb31c005cf50ef601ac48a8e5ab83cf05f963393d0fad00c3ad4720c820"
+      }
     },
     {
       "id": "magic_storage",
@@ -117,7 +121,11 @@
         "storage",
         "crafting"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "artifact": {
+        "file": "magic-storage.swmod",
+        "sha256": "5ef490052461c0f5c79dafb44dfcba4bde63c5b0b5fb0f74cc1347bb42e0df6f"
+      }
     },
     {
       "id": "rivals",
