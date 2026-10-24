@@ -25,6 +25,29 @@
       }
     },
     {
+      "id": "calamity",
+      "name": "Calamity",
+      "version": "6.83.0",
+      "author": "CalamityTeam (ported)",
+      "description": "灾厄 mod SandboxWorld 移植版(P7 六模块合并单体:材料/武器/配饰/敌怪/荒漠灾虫/药水)",
+      "api": 1,
+      "side": "both",
+      "minEngine": "0.1.77-beta",
+      "category": "content",
+      "tags": [
+        "boss",
+        "items",
+        "accessories",
+        "enemies"
+      ],
+      "dependencies": [],
+      "artifact": {
+        "file": "calamity.swmod",
+        "sha256": "47486d001abec656897caafaf2a79905fe8d272b52ac7bd1341675d3b854c7e4"
+      },
+      "source": "local-porting"
+    },
+    {
       "id": "director",
       "name": "导演模式",
       "version": "1.0.0",
