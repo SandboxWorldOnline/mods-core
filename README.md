@@ -1,5 +1,10 @@
 # mods-core
 
+**[简体中文](README.md) | [English](README_EN.md)**
+
+> [!NOTE]
+> 当前 mod 仍在开发测试期，可能存在功能不完整或不稳定的情况。商店与分发体系正在建设中。
+
 SandboxWorld 的 mod 集合仓——源码、构建与**商店注册表源仓**。
 
 ## 结构
