@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "generatedAt": "2026-10-24T08:18:25.968Z",
+  "generatedAt": "2026-10-24T08:45:02.050Z",
   "mods": [
     {
       "id": "calamity",
@@ -22,7 +22,8 @@
       "artifact": {
         "file": "calamity.swmod",
         "sha256": "47486d001abec656897caafaf2a79905fe8d272b52ac7bd1341675d3b854c7e4"
-      }
+      },
+      "source": "local-porting"
     },
     {
       "id": "director",
@@ -38,11 +39,7 @@
         "cinematic",
         "tool"
       ],
-      "dependencies": [],
-      "artifact": {
-        "file": "director.swmod",
-        "sha256": "8d868a64cfba691ee783693a7966ce84536cad7233e31e56222ef05f20909902"
-      }
+      "dependencies": []
     },
     {
       "id": "glmgirl",
@@ -58,11 +55,7 @@
         "town-npc",
         "cute"
       ],
-      "dependencies": [],
-      "artifact": {
-        "file": "glmgirl.swmod",
-        "sha256": "73bc3251fc6a5db1c2e4347c6226b4eecaa79bdfc852a90253bae5463b282e51"
-      }
+      "dependencies": []
     },
     {
       "id": "lights_and_shadows",
@@ -78,11 +71,7 @@
         "post-processing",
         "lighting"
       ],
-      "dependencies": [],
-      "artifact": {
-        "file": "lights-and-shadows.swmod",
-        "sha256": "d2564fb31c005cf50ef601ac48a8e5ab83cf05f963393d0fad00c3ad4720c820"
-      }
+      "dependencies": []
     },
     {
       "id": "magic_storage",
@@ -98,11 +87,7 @@
         "storage",
         "crafting"
       ],
-      "dependencies": [],
-      "artifact": {
-        "file": "magic-storage.swmod",
-        "sha256": "5ef490052461c0f5c79dafb44dfcba4bde63c5b0b5fb0f74cc1347bb42e0df6f"
-      }
+      "dependencies": []
     },
     {
       "id": "rivals",
@@ -119,11 +104,7 @@
         "multi-phase",
         "duo"
       ],
-      "dependencies": [],
-      "artifact": {
-        "file": "rivals.swmod",
-        "sha256": "215da9061f4c47270fed8703e5c32e878cc98a7ae5825d9a4036ce38fe745c71"
-      }
+      "dependencies": []
     }
   ]
 }
