@@ -8,8 +8,18 @@ import { join, resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 
 const args = process.argv.slice(2);
-const modsDir = args[0] && !args[0].startsWith('--') ? resolve(args[0]) : resolve('mods');
+// 仓内形态:mod 平铺在根目录(mods-core);Open-Terraria 侧则传 mods/ 实参。
+// 缺省=若根有 mod.json 平铺则扫根,否则扫 mods/
+const root = resolve('.');
+const flat = readdirSync(root, { withFileTypes: true })
+  .some(e => e.isDirectory() && existsSync(join(root, e.name, 'mod.json')));
+const modsDir = args[0] && !args[0].startsWith('--') ? resolve(args[0]) : (flat ? root : resolve('mods'));
 const outIdx = args.indexOf('--out');
+// --extra <json>:合并外部条目(calamity 占位/独立 -port 仓发布通道)——
+// 商店三层解耦的「多源发布」口:独立仓 CI 构建产物后,把自己的条目
+// (含 artifact.sha256)PR 进本仓 extra/ 目录或直接传 --extra 合并。
+const extraIdx = args.indexOf('--extra');
+const extraPath = extraIdx >= 0 ? args[extraIdx + 1] : null;
 const outPath = outIdx >= 0 ? args[outIdx + 1] : join(modsDir, '..', 'registry.json');
 
 const REQUIRED = ['id', 'name', 'version', 'author', 'description', 'minEngine', 'category'];
@@ -39,6 +49,15 @@ for (const ent of readdirSync(modsDir, { withFileTypes: true })) {
   });
 }
 mods.sort((a, b) => a.id.localeCompare(b.id));
+if (extraPath && existsSync(extraPath)) {
+  const extra = JSON.parse(readFileSync(extraPath, 'utf8'));
+  const ids = new Set(mods.map(m => m.id));
+  for (const m of (Array.isArray(extra) ? extra : extra.mods ?? [])) {
+    if (ids.has(m.id)) { console.warn('[registry] ⚠ extra 覆盖已有条目: ' + m.id); }
+    mods.push(m);
+  }
+  mods.sort((a, b) => a.id.localeCompare(b.id));
+}
 const reg = { schema: 2, generatedAt: new Date().toISOString(), mods };
 writeFileSync(outPath, JSON.stringify(reg, null, 2) + '\n');
 console.log(`[registry] ✓ ${mods.length} mods → ${outPath}`);

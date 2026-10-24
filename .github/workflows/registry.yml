@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - name: Validate mod.json & generate registry
-        run: node tools/gen-mod-registry.mjs --out registry.json
+        run: node tools/gen-mod-registry.mjs --out registry.json --extra extra/calamity.json
       - name: Commit registry (no-op if unchanged)
         run: |
           git config user.name "registry-bot" && git config user.email "noreply@sandboxworld.online"
