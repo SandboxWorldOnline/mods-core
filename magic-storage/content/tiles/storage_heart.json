@@ -1,0 +1,15 @@
+{
+ "key": "storage_heart",
+ "framed": true,
+ "w": 2,
+ "h": 2,
+ "solid": true,
+ "decor": false,
+ "pick": 0,
+ "frame": "style",
+ "frameWidth": 16,
+ "frameHeight": 16,
+ "styles": 1,
+ "texture": "textures/tiles/storage_heart.png",
+ "dropItem": "storage_heart"
+}

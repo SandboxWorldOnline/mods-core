@@ -1,0 +1,16 @@
+{
+  "id": "director",
+  "name": "导演模式",
+  "version": "1.0.0",
+  "author": "SandboxWorld",
+  "description": "Cutscene 导演台——经本地 WebSocket 服务(ws://127.0.0.1:7788)驱动游戏演出：相机/时间/字幕/黑幕/遮幅/玩家。配合 director server 使用。",
+  "api": 1,
+  "side": "both",
+  "minEngine": "0.1.77-beta",
+  "category": "utility",
+  "tags": [
+    "cinematic",
+    "tool"
+  ],
+  "dependencies": []
+}

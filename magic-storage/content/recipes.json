@@ -1,0 +1,66 @@
+[
+ {
+  "create": "storage_heart",
+  "createStack": 1,
+  "tile": 18,
+  "vanillaItems": [
+   {
+    "id": 704,
+    "stack": 10
+   },
+   {
+    "id": 123,
+    "stack": 1
+   }
+  ]
+ },
+ {
+  "create": "storage_unit",
+  "createStack": 1,
+  "tile": 18,
+  "vanillaItems": [
+   {
+    "id": 704,
+    "stack": 10
+   },
+   {
+    "id": 71,
+    "stack": 1
+   }
+  ]
+ },
+ {
+  "create": "storage_access",
+  "createStack": 1,
+  "tile": 18,
+  "vanillaItems": [
+   {
+    "id": 704,
+    "stack": 10
+   },
+   {
+    "id": 164,
+    "stack": 2
+   }
+  ]
+ },
+ {
+  "create": "crafting_access",
+  "createStack": 1,
+  "tile": 18,
+  "vanillaItems": [
+   {
+    "id": 704,
+    "stack": 10
+   },
+   {
+    "id": 123,
+    "stack": 1
+   },
+   {
+    "id": 164,
+    "stack": 4
+   }
+  ]
+ }
+]

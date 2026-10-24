@@ -1,0 +1,25 @@
+{
+  "id": "magic_storage",
+  "name": "Magic Storage 魔法存储",
+  "version": "1.0.0",
+  "author": "blushiemagic & Contributors (SandboxWorld port)",
+  "description": "Magic Storage v0.7.1 移植——存储心脏/存储单元/存储访问装置/合成访问装置。单元邻接成网,心脏聚合全网物品;访问装置远程开网;合成访问装置以存储内容为材料源直接合成(MIT,源码 /tmp/MagicStorage)。当前批:核心存储/存取/搜索分页/合成访问;未含:升级链/模块/分解塔/环境塔。",
+  "api": 1,
+  "side": "both",
+  "config": {
+    "capacityPerUnit": {
+      "type": "number",
+      "default": 40,
+      "min": 10,
+      "max": 400,
+      "label": "每单元容量格数(10-400,改后对新建单元生效)"
+    }
+  },
+  "minEngine": "0.1.77-beta",
+  "category": "utility",
+  "tags": [
+    "storage",
+    "crafting"
+  ],
+  "dependencies": []
+}

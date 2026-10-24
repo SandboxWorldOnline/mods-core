@@ -1,0 +1,18 @@
+{
+ "key": "claude_claw",
+ "name": "星织之爪",
+ "aiStyle": 0,
+ "lifeMax": 2400,
+ "damage": 55,
+ "defense": 18,
+ "knockBackResist": 0,
+ "width": 48,
+ "height": 48,
+ "frames": 1,
+ "noGravity": true,
+ "noTileCollide": true,
+ "HitSound": "NPCHit1",
+ "DeathSound": "NPCDeath1",
+ "texture": "npc/claude.png",
+ "drops": []
+}

@@ -1,0 +1,2 @@
+{ "key": "claude_petal", "texture": "proj/claude_petal.png", "gravity": 0, "lifetime": 300,
+  "pierce": 0, "tileCollide": false, "width": 18, "height": 18 }

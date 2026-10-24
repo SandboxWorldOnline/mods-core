@@ -1,0 +1,2 @@
+{ "key": "gpt_blade", "texture": "proj/gpt_blade.png", "gravity": 0, "lifetime": 260,
+  "pierce": 0, "tileCollide": false, "width": 20, "height": 20 }

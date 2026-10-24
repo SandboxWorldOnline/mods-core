@@ -1,0 +1,15 @@
+{
+ "key": "crafting_access",
+ "name": "合成访问装置",
+ "texture": "textures/items/crafting_access.png",
+ "func": {
+  "useStyle": 1,
+  "useAnimation": 15,
+  "useTime": 10,
+  "useTurn": 1,
+  "autoReuse": 1
+ },
+ "placeTile": "mod_magic_storage_crafting_access",
+ "value": 12000,
+ "rare": 1
+}

@@ -1,0 +1,18 @@
+{
+  "key": "claude",
+  "name": "星织圣·Claude",
+  "aiStyle": 0,
+  "lifeMax": 6800,
+  "damage": 85,
+  "defense": 22,
+  "knockBackResist": 0,
+  "width": 170,
+  "height": 110,
+  "frames": 1,
+  "noGravity": true,
+  "noTileCollide": true,
+  "HitSound": "NPCHit1",
+  "DeathSound": "NPCDeath1",
+  "texture": "npc/claude.png",
+  "drops": [{ "item": "claude_core", "min": 4, "max": 6, "chance": 1 }]
+}

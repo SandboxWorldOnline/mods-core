@@ -1,0 +1,18 @@
+{
+ "key": "gpt_rune",
+ "name": "GPT 符文",
+ "aiStyle": 0,
+ "lifeMax": 1400,
+ "damage": 40,
+ "defense": 8,
+ "knockBackResist": 0,
+ "width": 36,
+ "height": 36,
+ "frames": 1,
+ "noGravity": true,
+ "noTileCollide": true,
+ "HitSound": "NPCHit1",
+ "DeathSound": "NPCDeath1",
+ "texture": "npc/gpt.png",
+ "drops": []
+}

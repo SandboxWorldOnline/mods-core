@@ -1,0 +1,2 @@
+{ "key": "claude_spark", "texture": "proj/claude_spark.png", "gravity": 0, "lifetime": 240,
+  "pierce": 0, "tileCollide": false, "width": 18, "height": 18 }

@@ -1,0 +1,20 @@
+name: registry
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+  pages: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Validate mod.json & generate registry
+        run: node tools/gen-mod-registry.mjs --out registry.json
+      - name: Commit registry (no-op if unchanged)
+        run: |
+          git config user.name "registry-bot" && git config user.email "noreply@sandboxworld.online"
+          git add registry.json && git diff --cached --quiet || (git commit -m "registry: regenerate" && git push)

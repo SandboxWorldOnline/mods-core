@@ -1,0 +1,73 @@
+{
+  "id": "lights_and_shadows",
+  "name": "Lights And Shadows",
+  "version": "1.4.2",
+  "author": "yiyang233 (ported to SandboxWorld WebGL2)",
+  "description": "光影与体积阴影屏幕后处理——日光色带渐变/太阳位置阴影提取/godray 体积光/Kawase 泛光链。tModLoader 工坊件 2670628346 (Lights v1.4.2) 的 WebGL2 移植,全部效果 GPU 单上下文管线实现。",
+  "api": 1,
+  "side": "client",
+  "config": {
+    "useLight": {
+      "type": "bool",
+      "default": true,
+      "label": "开启光照(Use Lighting)"
+    },
+    "lightIntensity": {
+      "type": "number",
+      "default": 1,
+      "min": 0.4,
+      "max": 1.5,
+      "label": "光照强度(Light intensity 0.4-1.5)"
+    },
+    "moonlightIntensity": {
+      "type": "number",
+      "default": 1,
+      "min": 0.4,
+      "max": 1.1,
+      "label": "月光强度(Moon light intensity 0.4-1.1)"
+    },
+    "shadowIntensity": {
+      "type": "number",
+      "default": 1,
+      "min": 0.4,
+      "max": 1.5,
+      "label": "阴影强度(Shadow intensity 0.4-1.5)"
+    },
+    "dayColor": {
+      "type": "string",
+      "default": "Classic",
+      "label": "日光色(Daylight color): Classic=正午暖金 / Alternate=正午白"
+    },
+    "useBloom": {
+      "type": "bool",
+      "default": true,
+      "label": "开启外发光(Use Bloom)"
+    },
+    "bloomIntensity": {
+      "type": "number",
+      "default": 1,
+      "min": 0.2,
+      "max": 1.25,
+      "label": "外发光强度(Bloom intensity 0.2-1.25)"
+    },
+    "bloomCounts": {
+      "type": "number",
+      "default": 4,
+      "min": 1,
+      "max": 10,
+      "label": "Bloom 迭代次数(Bloom counts 1-10)"
+    },
+    "abOldGodray": {
+      "type": "bool",
+      "default": false,
+      "label": "A/B 诊断:旧版 godray 数学(树影修复前;仅判别用)"
+    }
+  },
+  "minEngine": "0.1.77-beta",
+  "category": "visual",
+  "tags": [
+    "post-processing",
+    "lighting"
+  ],
+  "dependencies": []
+}

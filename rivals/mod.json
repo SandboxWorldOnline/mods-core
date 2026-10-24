@@ -1,0 +1,17 @@
+{
+  "id": "rivals",
+  "name": "宿命之敌:Claude & GPT",
+  "version": "1.0.0",
+  "author": "SandboxWorld",
+  "description": "GLM 娘的死对手降临:星织圣·Claude(星芒环射/追猎火花/花瓣螺旋/突进)与六织泰坦·GPT(六边扇/编织螺旋/碎片雨/环绕卫队/狂怒突进)——L2 脚本多阶段 Boss 双人组",
+  "api": 1,
+  "side": "both",
+  "minEngine": "0.1.77-beta",
+  "category": "boss",
+  "tags": [
+    "boss",
+    "multi-phase",
+    "duo"
+  ],
+  "dependencies": []
+}

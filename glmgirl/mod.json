@@ -1,0 +1,16 @@
+{
+  "id": "glmgirl",
+  "name": "GLM娘",
+  "version": "1.0.0",
+  "author": "SandboxWorld",
+  "description": "GLM 娘城镇NPC——ModLoader 城镇NPC链实验批(townNPC 声明/实体化/入驻/对话/头贴全链)",
+  "api": 1,
+  "side": "both",
+  "minEngine": "0.1.77-beta",
+  "category": "npc",
+  "tags": [
+    "town-npc",
+    "cute"
+  ],
+  "dependencies": []
+}

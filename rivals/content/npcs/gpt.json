@@ -1,0 +1,18 @@
+{
+  "key": "gpt",
+  "name": "六织泰坦·GPT",
+  "aiStyle": 0,
+  "lifeMax": 8200,
+  "damage": 95,
+  "defense": 26,
+  "knockBackResist": 0,
+  "width": 120,
+  "height": 165,
+  "frames": 1,
+  "noGravity": true,
+  "noTileCollide": true,
+  "HitSound": "NPCHit1",
+  "DeathSound": "NPCDeath1",
+  "texture": "npc/gpt.png",
+  "drops": [{ "item": "gpt_core", "min": 4, "max": 6, "chance": 1 }]
+}

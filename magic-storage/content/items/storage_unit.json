@@ -1,0 +1,15 @@
+{
+ "key": "storage_unit",
+ "name": "存储单元",
+ "texture": "textures/items/storage_unit.png",
+ "func": {
+  "useStyle": 1,
+  "useAnimation": 15,
+  "useTime": 10,
+  "useTurn": 1,
+  "autoReuse": 1
+ },
+ "placeTile": "mod_magic_storage_storage_unit",
+ "value": 5000,
+ "rare": 1
+}

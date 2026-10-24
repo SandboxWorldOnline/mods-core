@@ -1,0 +1,15 @@
+{
+ "key": "storage_unit",
+ "framed": true,
+ "w": 2,
+ "h": 2,
+ "solid": true,
+ "decor": false,
+ "pick": 0,
+ "frame": "style",
+ "frameWidth": 16,
+ "frameHeight": 16,
+ "styles": 1,
+ "texture": "textures/tiles/storage_unit.png",
+ "dropItem": "storage_unit"
+}

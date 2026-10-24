@@ -1,0 +1,15 @@
+{
+ "key": "crafting_access",
+ "framed": true,
+ "w": 2,
+ "h": 2,
+ "solid": false,
+ "decor": false,
+ "pick": 0,
+ "frame": "style",
+ "frameWidth": 16,
+ "frameHeight": 16,
+ "styles": 1,
+ "texture": "textures/tiles/crafting_access.png",
+ "dropItem": "crafting_access"
+}
