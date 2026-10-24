@@ -1,0 +1,49 @@
+# gitleaks 配置(2026-10-18 用户令:敏感提交防线)
+# 基线:extend 默认规则全集(gitleaks 官方 170+ 条:api-key/token/password/private-key/aws/gcp/...)
+# + 本仓已知误报的定向豁免(见文件尾 allowlist——豁免必须带案件注释,新增豁免须同批注释)。
+# 扫描语义:本地 hook 只扫【将要提交的暂存内容】(--staged),全历史扫描另跑 detect。
+[extend]
+useDefault = true
+
+# ─── 本仓豁免面(每条必须有理由;无理由豁免=审查时打回) ───
+[allowlist]
+description = "SandboxWorld 已知误报豁免"
+paths = [
+  # 1) 测试夹具里的【假】凭证形态(占位字符串/测试桩,非真实密钥):
+  #    - fixture 里常量 token='test-token-xxx' / password: 'fake' 等测试数据
+  '(^|/)tests/.*fixture.*\.(json|ts)$',
+  # 2) 文档中讨论 token 格式的示例(非真值):
+  '(^|/)docs/.*\.md$',
+  # 3) 第三方锁文件(package-lock 由 registry integrity 字段误报):
+  '(^|/)package-lock\.json$',
+  # 4) 本配置自身与 git hook 脚本(含 'token' 等词是脚本逻辑):
+  '(^|/)\.gitleaks\.toml$',
+  '(^|/)\.git/hooks/.*$',
+  # 5) 游戏数据表路径族(2026-10-19 gitleaks 全史复核定谳:全史 3788 命中 100% 为
+  #    游戏数据键噪声,1103 个去重值全部为游戏标识符,零真凭据;大簇全部落在这几个
+  #    机器生成/纯游戏数据文件里):
+  #    - vanilla*.json = 精灵图集(TEdit/vanilla 键值);*.generated.json = 生成物;
+  #      tiles/items.{ts,js} = 数千条 def({key:'v_380_planter_boxes',...}) 数据定义
+  '(^|/)public/sprites/vanilla.*\.json$',
+  '(^|/)src/data/vanilla.*\.json$',
+  '(^|/)src/data/.*\.generated\.json$',
+  '(^|/)src/data/(tiles|items)\.(ts|js)$',
+]
+# 6) 游戏数据模型「key 属性」惯用形(regexTarget=match:按规则命中的片段判定,
+#    而非按提取的 secret 判定——专用规则 aws/github/gitlab 等的命中片段不含
+#    "key...=" 属性上下文,因此专用规则不受本豁免影响,保持全灵敏)。
+#    本仓 item/tile/wall 定义与测试/探针代码普遍写成 key: 'vi_1931_BlizzardStaff' /
+#    HF_KEY = 'place_v_77_hellforge' / "key":"CorruptionUnsafe1" / out.key5005 === '…'
+#    ——generic-api-key 把字面量 key 属性名当关键词、把游戏键值当密钥串。
+#    豁免条件:属性名以 key 结尾(允许前缀/后缀数字)+ 赋值符(: = === ,)+ 引号内
+#    纯 [A-Za-z0-9_/] 标识符值(不含 - . + = 等真实 token 常见字符)。
+#    ★已实证仍会命中的形态:token/secret/password/apiKey 之外的属性名
+#    (如 token = 'cfat_…' 照常报);AKIA/ghp/glpat 等【有专用规则】的 token 即使
+#    写在 key 形态行里也照常报(专用规则片段无属性上下文)。
+#    ★已备案残洞:无专用规则覆盖的 token 前缀(如 cfat_)若恰好写成
+#    xxxKey: '纯字母数字下划线串' 会被本条误豁免——本仓纪律凭据只走环境变量,
+#    接受该残差;若未来引入新凭据形态,先扩专用规则再动本条。
+regexTarget = "match"
+regexes = [
+  '(?i)key\d*[\x27"]?\s*(?::{1,3}|={1,3}|,)\s*[\x27"]?[A-Za-z][A-Za-z0-9_/]*[\x27"]?',
+]
